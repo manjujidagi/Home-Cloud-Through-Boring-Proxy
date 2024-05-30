@@ -1,0 +1,10 @@
+{
+    "app_name" : {
+        "path" : "/path/to/app",
+        "port" : "some_port",
+        "commands" : [
+            "command1",
+            "command2"
+        ]
+    }
+}
