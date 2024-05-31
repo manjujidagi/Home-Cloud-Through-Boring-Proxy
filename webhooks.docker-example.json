@@ -1,0 +1,13 @@
+{
+    "app-name" : {
+        "path" : "/Users/mj/Desktop/MJ/MassiveDynamics/Products/Trajectory/app-name",
+        "port": "8886",
+        "commands" : [
+            "git pull origin dev",
+            "docker stop $(docker ps -q --filter ancestor=app-name)",
+            "docker rm $(docker ps -a -q --filter ancestor=app-name)",
+            "docker build -t app-name .",
+            "docker run --env-file ./.env -p 8886:3000 app-name:latest"
+        ]
+    }
+}
