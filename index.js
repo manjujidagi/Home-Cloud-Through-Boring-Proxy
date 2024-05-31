@@ -178,8 +178,27 @@ app.listen(port, () => {
             console.log(`Webhooks found in 'webhooks.json' file:`)
             console.log("----------------------------------------------")
             apps.forEach(app => {
-                console.log(`App: ${app}`);
+                console.log(`\n\nApp: ${app}`);
                 console.log(`Webhook URL: ${generateWebhookUrl(app)}`);
+                // Instructions
+                console.log(`Setup Instructions:`)
+                console.log("------------------------------------------------")
+                // One time setup
+                console.log(`One time setup:`)
+                console.log("------------------------------------------------")
+                console.log(`1. Go to https://${process.env.BORING_PROXY_SERVER}`)
+                console.log(`2. Login with your credentials`)
+                console.log(`3. Click on the 'Add Tunnel'`)
+                console.log(`4. Enter the following details:`)
+                console.log(`   - Domain: '${app}.${process.env.BORING_PROXY_SERVER}'`)
+                console.log(`   - Tunnel Port: 'Random' ( Keep it default )`)
+                console.log(`   - Client Name: '${process.env.BORING_PROXY_CLIENT_NAME}'`)
+                console.log(`   - Client Address: '127.0.0.1' ( Keep it default )`)
+                console.log(`   - Client Port: '${webhooks[app].port}'`)
+                console.log(`   - TLS Termination: 'Client HTTPS'`)
+                console.log(`   - Allow External TCP: 'Checked'`)
+                console.log(`5. Click on 'Submit' or 'Add Tunnel'`)
+                console.log(`6. You will see a new tunnel created in Tunnels section`)
                 console.log("----------------------------------------------")
             });
         } else {
