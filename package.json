@@ -1,6 +1,6 @@
 {
   "name": "home-cloud-through-boring-proxy",
-  "version": "1.0.02",
+  "version": "1.0.03",
   "description": "Easy client with minimal configurations to host applications through Boring Proxy",
   "main": "index.js",
   "scripts": {
